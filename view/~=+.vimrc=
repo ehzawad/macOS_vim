@@ -1,5 +1,9 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer> <silent> <Plug>MarkdownPreviewStop :call mkdp#util#stop_preview()a
+imap <buffer> <silent> <Plug>MarkdownPreview :call mkdp#util#open_preview_page()a
 vnoremap <buffer> <silent> [" :exe "normal! gv"|call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
 nnoremap <buffer> <silent> [" :call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
 vnoremap <buffer> <silent> [] m':exe "normal! gv"|call search('^\s*endf\%[unction]\>', "bW")
@@ -12,6 +16,10 @@ vnoremap <buffer> <silent> ][ m':exe "normal! gv"|call search('^\s*endf\%[unc
 nnoremap <buffer> <silent> ][ m':call search('^\s*endf\%[unction]\>', "W")
 vnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*fu\%[nction]\>', "W")
 nnoremap <buffer> <silent> ]] m':call search('^\s*fu\%[nction]\>', "W")
+map <buffer> <silent> <Plug>MarkdownPreviewStop :call mkdp#util#stop_preview()
+map <buffer> <silent> <Plug>MarkdownPreview :call mkdp#util#open_preview_page()
+let &cpo=s:cpo_save
+unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -95,8 +103,10 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
+setlocal scrolloff=-1
 setlocal shiftwidth=2
 setlocal noshortname
+setlocal sidescrolloff=-1
 setlocal signcolumn=auto
 setlocal smartindent
 setlocal softtabstop=0
@@ -127,12 +137,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 34 - ((14 * winheight(0) + 10) / 21)
+let s:l = 1556 - ((19 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-34
-normal! 072|
+1556
+normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 nohlsearch
 doautoall SessionLoadPost

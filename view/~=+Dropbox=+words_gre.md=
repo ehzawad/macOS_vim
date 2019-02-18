@@ -2,6 +2,8 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
+imap <buffer> <silent> <Plug>MarkdownPreviewStop :call mkdp#util#stop_preview()a
+imap <buffer> <silent> <Plug>MarkdownPreview :call mkdp#util#open_preview_page()a
 vmap <buffer> [] <Plug>Markdown_MoveToPreviousSiblingHeader
 nmap <buffer> [] <Plug>Markdown_MoveToPreviousSiblingHeader
 vmap <buffer> [[ <Plug>Markdown_MoveToPreviousHeader
@@ -18,6 +20,8 @@ vmap <buffer> ge <Plug>Markdown_EditUrlUnderCursor
 nmap <buffer> ge <Plug>Markdown_EditUrlUnderCursor
 vmap <buffer> gx <Plug>Markdown_OpenUrlUnderCursor
 nmap <buffer> gx <Plug>Markdown_OpenUrlUnderCursor
+map <buffer> <silent> <Plug>MarkdownPreviewStop :call mkdp#util#stop_preview()
+map <buffer> <silent> <Plug>MarkdownPreview :call mkdp#util#open_preview_page()
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -58,7 +62,7 @@ setlocal filetype=markdown
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
-setlocal foldenable
+setlocal nofoldenable
 setlocal foldexpr=Foldexpr_markdown(v:lnum)
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -103,8 +107,10 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
+setlocal scrolloff=-1
 setlocal shiftwidth=4
 setlocal noshortname
+setlocal sidescrolloff=-1
 setlocal signcolumn=auto
 setlocal smartindent
 setlocal softtabstop=0
@@ -135,74 +141,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-2
-normal! zo
-2
-normal! zo
-2
-normal! zo
-2
-normal! zo
-2
-normal! zo
-5
-normal! zo
-8
-normal! zo
-11
-normal! zo
-14
-normal! zo
-17
-normal! zo
-24
-normal! zo
-27
-normal! zo
-30
-normal! zo
-35
-normal! zo
-38
-normal! zo
-43
-normal! zo
-46
-normal! zo
-51
-normal! zo
-54
-normal! zo
-60
-normal! zo
-63
-normal! zo
-66
-normal! zo
-70
-normal! zo
-75
-normal! zo
-78
-normal! zo
-81
-normal! zo
-84
-normal! zo
-87
-normal! zo
-90
-normal! zo
-93
-normal! zo
-98
-normal! zo
-let s:l = 100 - ((17 * winheight(0) + 10) / 21)
+let s:l = 283 - ((66 * winheight(0) + 35) / 71)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-100
-normal! 0
+283
+normal! 037|
 let &so = s:so_save | let &siso = s:siso_save
 nohlsearch
 doautoall SessionLoadPost
