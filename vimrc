@@ -1412,15 +1412,6 @@ fun! Link(site)
   call netrw#BrowseX(l:site, netrw#CheckIfRemote())
 endfun
 command! -nargs=+ -complete=command Link call Link(<q-args>)
-" use case
-" single website
-" :Goto "github.com"
-" or
-" :Goto github.com
-" two or multiple link
-"
-" :Goto "google.com github.com"
-" :Goto "google.com fb.com github.com"
 "
 " Make netrw more useful
 let g:netrw_sort_by='time'
