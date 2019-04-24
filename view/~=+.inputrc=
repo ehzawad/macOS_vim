@@ -24,8 +24,8 @@ setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=:#,:;
-setlocal commentstring=;\ %s
+setlocal comments=:#
+setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -36,13 +36,13 @@ setlocal nocursorbind
 setlocal cursorcolumn
 setlocal cursorline
 setlocal define=
-setlocal dictionary=/usr/share/dict/words,~/.vim/spell/gitconfig.txt
+setlocal dictionary=/usr/share/dict/words,~/.vim/spell/readline.txt
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'gitconfig'
-setlocal filetype=gitconfig
+if &filetype != 'readline'
+setlocal filetype=readline
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -64,10 +64,10 @@ setlocal iminsert=0
 setlocal imsearch=-1
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=GetGitconfigIndent()
-setlocal indentkeys=o,O,*<Return>,0[,],0;,0#,=,!^F
+setlocal indentexpr=GetReadlineIndent()
+setlocal indentkeys=!^F,o,O,=$else,=$endif
 setlocal infercase
-setlocal iskeyword=@,48-57,192-255,-
+setlocal iskeyword=@,48-57,_,192-255,-
 setlocal keywordprg=
 setlocal linebreak
 setlocal nolisp
@@ -96,7 +96,7 @@ setlocal shiftwidth=4
 setlocal noshortname
 setlocal sidescrolloff=-1
 setlocal signcolumn=auto
-setlocal smartindent
+setlocal nosmartindent
 setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
@@ -106,8 +106,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
-if &syntax != 'gitconfig'
-setlocal syntax=gitconfig
+if &syntax != 'readline'
+setlocal syntax=readline
 endif
 setlocal tabstop=4
 setlocal tagcase=
@@ -126,11 +126,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 10) / 21)
+let s:l = 50 - ((19 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+50
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

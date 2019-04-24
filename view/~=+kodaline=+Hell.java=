@@ -19,13 +19,13 @@ setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
-setlocal nocindent
+setlocal cindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
+setlocal cinoptions=j1
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=:#,:;
-setlocal commentstring=;\ %s
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=//%s
 setlocal complete=.,w,b,u,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -36,13 +36,13 @@ setlocal nocursorbind
 setlocal cursorcolumn
 setlocal cursorline
 setlocal define=
-setlocal dictionary=/usr/share/dict/words,~/.vim/spell/gitconfig.txt
+setlocal dictionary=/usr/share/dict/words,~/.vim/spell/java.txt
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'gitconfig'
-setlocal filetype=gitconfig
+if &filetype != 'java'
+setlocal filetype=java
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -63,11 +63,11 @@ setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=-1
 setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetGitconfigIndent()
-setlocal indentkeys=o,O,*<Return>,0[,],0;,0#,=,!^F
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=GetJavaIndent()
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e,0=extends,0=implements
 setlocal infercase
-setlocal iskeyword=@,48-57,192-255,-
+setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal linebreak
 setlocal nolisp
@@ -103,11 +103,11 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en_us
 setlocal statusline=
-setlocal suffixesadd=
+setlocal suffixesadd=.java
 setlocal noswapfile
 setlocal synmaxcol=3000
-if &syntax != 'gitconfig'
-setlocal syntax=gitconfig
+if &syntax != 'java'
+setlocal syntax=java
 endif
 setlocal tabstop=4
 setlocal tagcase=
