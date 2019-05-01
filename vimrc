@@ -920,7 +920,7 @@ au Filetype *.jsx,js nnoremap <leader>je :silent call Eslint()<CR>
 ab #i #include
 ab #d #define
 
-ab ## #####
+ab # #####
 
 " vim spell checking feature is good for editing txt file markdown or latex
 if has("spell")
