@@ -26,7 +26,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'majutsushi/tagbar'
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender'
 Plug 'othree/html5.vim'
@@ -52,7 +52,7 @@ syntax on
 set infercase
 set ai
 set si
-set nu
+set nonumber
 
 " omg folding is the worst
 " but sometimes useful for hiding details
