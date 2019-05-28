@@ -34,16 +34,9 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'ap/vim-css-color'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'w0rp/ale'
-
-" sanity check for docker ubuntu
-" that is bit minimal
-if v:version >= 801
-
 Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --java-completer' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"
-endif
 call plug#end()
 
 " syntax highlighting and auto-indentation
