@@ -24,7 +24,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'tomtom/tcomment_vim'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender'
@@ -1362,10 +1361,6 @@ augroup END
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
-let g:gist_open_browser_after_post = 1
-
-
-
 
 " go Link Quickly
 fun! Link(site)
@@ -1483,13 +1478,6 @@ set modifiable
 hi Visual term=None cterm=reverse guibg=Grey
 " JAVA
 let java_highlight_java_lang_ids=1
-
-" Plug 'mattn/gist-vim'
-" Only :w! updates a gist.
-let g:gist_update_on_write = 2
-let g:gist_clip_command = 'xclip -selection clipboard'
-let g:gist_get_multiplefile = 1
-let g:gist_edit_with_buffers = 1
 
 
 augroup ShCodeJS
