@@ -18,6 +18,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'bumaociyuan/vim-swift'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'pangloss/vim-javascript'
