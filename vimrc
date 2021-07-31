@@ -33,7 +33,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'ap/vim-css-color'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'dense-analysis/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --ts-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --all' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 call plug#end()
 

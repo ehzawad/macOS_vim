@@ -153,20 +153,7 @@ def FlagsForCompilationDatabase(root, filename):
         return None
 
 
-def FlagsForFile(filename):
-    root = os.path.realpath(filename)
-    compilation_db_flags = FlagsForCompilationDatabase(root, filename)
-    if compilation_db_flags:
-        final_flags = compilation_db_flags
-    else:
-        final_flags = BASE_FLAGS
-        clang_flags = FlagsForClangComplete(root)
-        if clang_flags:
-            final_flags = final_flags + clang_flags
-        include_flags = FlagsForInclude(root)
-        if include_flags:
-            final_flags = final_flags + include_flags
-    return {
-            'flags': final_flags,
-            'do_cache': True
-            }
+def Settings( **kwargs ):
+  return {
+    'flags': [ '-x', 'c++', '-Wall', '-Wextra', '-Werror' ],
+  }
