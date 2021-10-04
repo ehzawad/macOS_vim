@@ -33,7 +33,6 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'ap/vim-css-color'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'dense-analysis/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --all' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 call plug#end()
 
@@ -1521,32 +1520,3 @@ endif
 
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
-
-" Elephant
-" YCM Vim
-augroup load_ycm
-  autocmd!
-  autocmd CursorHold, CursorHoldI * :packadd YouCompleteMe
-                                \ | autocmd! load_ycm
-augroup END
-
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-" let g:ycm_filetype_blacklist = {}
-
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar': 1,
-      \ 'qf': 1,
-      \ 'notes': 1,
-      \ 'markdown': 1,
-      \ 'unite': 1,
-      \ 'text': 1,
-      \ 'vimwiki': 1,
-      \ 'pandoc': 1,
-      \ 'infolog': 1,
-      \ 'mail': 1
-      \}
