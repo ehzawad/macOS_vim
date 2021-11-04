@@ -18,7 +18,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'bumaociyuan/vim-swift'
 Plug 'ekalinin/Dockerfile.vim'
@@ -799,13 +798,6 @@ au BufRead,BufNewFile *.asm set filetype=nasm
 
 " find recursively relative path though your project folder
 " like tree Data Structure
-set path=$PWD/**
-set path+=$HOME/**
-set path+=**
-set path-=~/.npm-global/
-set path-=~/.npm/
-set path-=~/.vim/**
-set path-=~/.vim/plugged/
 
 " " Damian Conway's  Blink function
 nnoremap <silent> n n:call HLNext(0.1)<cr>
