@@ -19,6 +19,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'bumaociyuan/vim-swift'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'pangloss/vim-javascript'
@@ -737,11 +738,6 @@ nnoremap <Leader>ct :!ctags --sort=yes -f tags %<CR>
 
 " set, text wrapping toggles
 nnoremap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
-
-" find merge conflict markers
-" useful for Git merge workflow for larger file
-nnoremap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
-
 
 
 command! Q q " Bind :Q to :q
@@ -1502,9 +1498,6 @@ nnoremap <silent> <C-A> :ZoomToggle<CR>
 
 
 command! W w !sudo tee % > /dev/null
-
-" fuzzy finder
-nnoremap <leader>ff :FZF<CR>
 
 
 function s:SetCursorLine()
