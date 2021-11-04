@@ -708,12 +708,6 @@ set nomore
 " Inverse highlighting for cursor...
 highlight CursorInverse   term=inverse ctermfg=black ctermbg=white
 
-" Easier mappings for resizing windows
-nnoremap <C-w>< 5<C-w><
-nnoremap <C-w>> 5<C-w>>
-nnoremap + 5<C-w>+
-nnoremap _ 5<C-w>-
-
 " Make it easier to paste in insert mode
 inoremap PPP <Esc>pa
 
