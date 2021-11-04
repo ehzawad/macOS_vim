@@ -123,11 +123,6 @@ set wildignore+=*.pyc,__pycache__
 " close buffer when tab is closed
 set nohidden
 
-" ctags
-" for ctags you have to run
-" ctags -R .
-" in that working directory
-set tags=./tags,tags;
 
 " ,tt browse tags using ctags
 nnoremap <leader>tt :TagbarToggle<CR><C-w><C-w>
