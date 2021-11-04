@@ -495,10 +495,6 @@ command! RenameFile :call RenameFile()
 
 nnoremap <Leader>nn :call RenameFile()<cr>
 
-" Disable K looking stuff up
-nnoremap K <Nop>
-vnoremap K <Nop>
-
 "  >>>highlight cursorcolumn and cursorline and statusline and tabline
 
 " highlight Tabline term=bold ctermfg=black ctermbg=yellow
