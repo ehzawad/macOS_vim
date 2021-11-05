@@ -70,7 +70,7 @@ let mapleader = ","
 " :tabf :tabl :tabp :tabN is really handy
 " buffers is more intutive use arrow keys ..SO mapping
 " hacky way tab browsing 2gt
-" <C-o. and <C-i> is really helpful
+" <C-o> and <C-i> is really helpful
 " always show tab line to avoid annoying resize
 set showtabline=2
 
@@ -126,16 +126,6 @@ set nohidden
 
 " ,tt browse tags using ctags
 nnoremap <leader>tt :TagbarToggle<CR><C-w><C-w>
-
-" better moving between windows
-" Ctrl+{h,j,k,l}: move among windows
-nnoremap <C-k> <C-W>k
-nnoremap <C-j> <C-W>j
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
-" Toggle  between most recent window
-nnoremap <C-x> <C-w>x
-
 
 " ,g: ctags go to definition in new tab
 " ,hz: my doc file
@@ -730,8 +720,6 @@ command! QA qall
 command! E e
 command! W w
 command! Wq wq
-
-set switchbuf+=usetab,newtab
 
 
 " autocomplete
@@ -1456,25 +1444,6 @@ augroup ShCodeJS
   autocmd!
   autocmd FileType sh nnoremap <leader>r :! bash %<CR>
 augroup END
-
-" http://stackoverflow.com/a/26551079/4009164
-" Zoom / Restore window.
-function! s:ZoomToggle() abort
-    if exists('t:zoomed') && t:zoomed
-        execute t:zoom_winrestcmd
-        let t:zoomed = 0
-    else
-        let t:zoom_winrestcmd = winrestcmd()
-        resize
-        vertical resize
-        let t:zoomed = 1
-    endif
-endfunction
-command! ZoomToggle call s:ZoomToggle()
-nnoremap <silent> <C-A> :ZoomToggle<CR>
-
-
-command! W w !sudo tee % > /dev/null
 
 
 function s:SetCursorLine()
