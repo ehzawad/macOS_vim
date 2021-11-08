@@ -19,6 +19,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/limelight.vim'
 Plug 'bumaociyuan/vim-swift'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'pangloss/vim-javascript'
@@ -41,7 +42,7 @@ syntax on
 set infercase
 set ai
 set si
-set nonumber
+" set nonumber
 
 " omg folding is the worst
 " but sometimes useful for hiding details
@@ -648,15 +649,18 @@ set wildignore+=*.swp
 " highlight using  ,hh
 nnoremap <silent><expr> <Leader>hh (&hls && v:hlsearch ? ':set nohls' : ':set hls')."\n"
 
-nnoremap <leader>tn :call ToggleNumber()<CR>
+" nnoremap <leader>tn :call ToggleNumber()<CR>
 
-set cursorline number
+:set cursorline number
+:set relativenumber
+:set number
+:set number relativenumber
 
 function! ToggleNumber()
   if (&relativenumber == 1)
     set norelativenumber
   else
-    set relativenumber
+    set number relativenumber
   endif
 endfunc
 command! ToggleNumber :call ToggleNumber()
@@ -672,7 +676,7 @@ function! ToggleMouse()
 endfunction
 
 " ,tm: toggle mouse support
-nnoremap <leader>tm :call ToggleMouse()<CR>
+" nnoremap <leader>tm :call ToggleMouse()<CR>
 
 
 " config for better move to block
@@ -1044,10 +1048,10 @@ set suffixes+=.class    " Java classes
 set suffixes+=#         " Emacs auto backups
 
 
-func! LessInitFunc()
-  set nocursorcolumn nocursorline nonumber
+func! No()
+  set nocursorcolumn nocursorline nonumber norelativenumber
 endfunc
-command! LessInitFunc :call LessInitFunc()
+command! No :call No()
 
 " tHIS FUNction
 " all credits to https://github.com/dhruvasagar
@@ -1453,9 +1457,7 @@ endfunction
 autocmd VimEnter * call s:SetCursorLine()
 
 
-if !empty(glob("~/.vim/plugged/tender"))
-  colo tender
-endif
+colo tender
 
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
