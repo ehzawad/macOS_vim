@@ -1461,7 +1461,7 @@ colo tender
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
 
-:set dictionary="/usr/share/dict/words"
+set dictionary="/usr/share/dict/words"
 
 " Move up and move down the line
 
