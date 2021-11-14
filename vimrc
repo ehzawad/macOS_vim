@@ -972,7 +972,6 @@ xnoremap  y "+y
 set noequalalways
 " Autocomplete with dictionary words when spell check is on
 
-set dictionary+=/usr/share/dict/words
 au FileType * execute 'setlocal dict+=~/.vim/spell/'.&filetype.'.txt'
 " set dictionary+=~/.vim/spell
 "
