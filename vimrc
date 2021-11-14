@@ -20,18 +20,12 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/limelight.vim'
-Plug 'bumaociyuan/vim-swift'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'pangloss/vim-javascript'
 Plug 'tomtom/tcomment_vim'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender'
 Plug 'tpope/vim-surround'
-Plug 'Chiel92/vim-autoformat'
-Plug 'ap/vim-css-color'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'dense-analysis/ale'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 call plug#end()
