@@ -26,7 +26,6 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender'
 Plug 'tpope/vim-surround'
-Plug 'dense-analysis/ale'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 call plug#end()
 
