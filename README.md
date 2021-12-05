@@ -1,7 +1,7 @@
 # shelterVim
-Cool
 
-https://gist.github.com/ehzawad/a2d570cbcce335b996122ea693d42dd9
+clone and copy it into a home directory folder named ~/.vim
+
 # Cool
 # vim
 # old shit
