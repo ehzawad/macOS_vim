@@ -565,8 +565,6 @@ let &viewdir = myViewDir
 " store all view files here
 set viewdir=~/.vim/view
 
-silent !mkdir -p ~/.vim/myTags > /dev/null 2>&1
-silent !mkdir -p ~/.vim/mySpell > /dev/null 2>&1
 
 " If you only want to save the current tab page:
 set sessionoptions-=tabpages
@@ -965,9 +963,6 @@ xnoremap  y "+y
 set noequalalways
 " Autocomplete with dictionary words when spell check is on
 
-au FileType * execute 'setlocal dict+=~/.vim/spell/'.&filetype.'.txt'
-" set dictionary+=~/.vim/spell
-"
 
 inoremap <Left>  <C-G>U<Left>
 inoremap <Right> <C-G>U<Right>
@@ -1453,7 +1448,8 @@ colo tender
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
 
-set dictionary="/usr/share/dict/words"
+set dictionary+=/usr/share/dict/american-english
+" set complete+=k
 
 " Move up and move down the line
 
