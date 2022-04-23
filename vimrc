@@ -1449,6 +1449,7 @@ autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
 
 set dictionary+=/usr/share/dict/american-english
+set dictionary+=/usr/share/dict/words
 " set complete+=k
 
 " Move up and move down the line
@@ -1474,3 +1475,5 @@ inoremap <silent><expr> <Tab>
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" let g:coc_start_at_startup = v:false

@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/ehza/philosophize/ehz_django/ehz_django_project/mysite/mysite'
+let g:netrw_dirhist_3='/Users/ehza/philosophize/ehz_django/ehz_django_project/mysite'
+let g:netrw_dirhist_2='/Users/ehza/philosophize/ehz_django/ehz_django_project/mysite/polls'
 let g:netrw_dirhist_1='/Users/ehz/Documents/css_seriously/css-selectors'
