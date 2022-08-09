@@ -17,12 +17,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/limelight.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender'
 Plug 'tpope/vim-surround'
@@ -57,14 +53,6 @@ set pumheight=8                 " Limit height of popup menu
 " you can use leader whatever you want
 let mapleader = ","
 
-" faster tab navigation
-" gt gT
-" :tabs     will show you all tabs list
-" :tabf :tabl :tabp :tabN is really handy
-" buffers is more intutive use arrow keys ..SO mapping
-" hacky way tab browsing 2gt
-" <C-o> and <C-i> is really helpful
-" always show tab line to avoid annoying resize
 set showtabline=2
 
 " searching options
@@ -74,10 +62,6 @@ set smartcase
 
 " Enable extended regexes
 set magic
-
-" Ignore stuff that can't be opened
-set wildignore+=tmp/**
-set wildignore+=~/.vim/view/**
 
 " disable backups
 set nobackup
@@ -106,13 +90,6 @@ set mouse=a
 set wrap
 set linebreak
 set nolist
-
-" better tab completion on commands
-set wildmenu
-set wildmode=list:longest,full
-
-set wildignore+=*.pyc,__pycache__
-
 " close buffer when tab is closed
 set nohidden
 
@@ -684,21 +661,6 @@ highlight CursorInverse   term=inverse ctermfg=black ctermbg=white
 
 " Make it easier to paste in insert mode
 inoremap PPP <Esc>pa
-
-" Index ctags from any project directories
-function! ReindexCtags(...)
-  let l:ctags_hook = '$(git rev-parse --show-toplevel)/.git/hooks/ctags'
-
-  if exists(l:ctags_hook)
-    exec '!'. l:ctags_hook
-  else
-    exec "!ctags -R ."
-  endif
-
-endfunction
-command! -nargs=0 ReindexCtags call ReindexCtags(<f-args>)
-
-
 " turn off vim-markdown folding
 " let g:vim_markdown_folding_disabled=1
 
@@ -1458,42 +1420,3 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-
-if empty(mapcheck("\<C-n>", 'i'))
-  inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
-endif
-if empty(mapcheck("\<C-p>", 'i'))
-  inoremap <silent><expr> <C-p> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
-endif
-if empty(mapcheck("\<down>", 'i'))
-  inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
-endif
-if empty(mapcheck("\<up>", 'i'))
-  inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
-endif
-if empty(mapcheck("\<C-e>", 'i'))
-  inoremap <silent><expr> <C-e> coc#pum#visible() ? coc#pum#cancel() : "\<C-e>"
-endif
-if empty(mapcheck("\<C-y>", 'i'))
-  inoremap <silent><expr> <C-y> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
-endif
-if empty(mapcheck("\<PageDown>", 'i'))
-  inoremap <silent><expr> <PageDown> coc#pum#visible() ? coc#pum#scroll(1) : "\<PageDown>"
-endif
-if empty(mapcheck("\<PageUp>", 'i'))
-  inoremap <silent><expr> <PageUp> coc#pum#visible() ? coc#pum#scroll(0) : "\<PageUp>"
-endif
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
-
-" " remap for complete to use tab and <cr>
-" inoremap <silent><expr> <TAB>
-"       \ coc#pum#visible() ? coc#pum#next(1):
-"       \ <SID>check_back_space() ? "\<Tab>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-" inoremap <silent><expr> <c-space> coc#refresh()
-
-hi CocSearch ctermfg=12 guifg=#18A3FF
-hi CocMenuSel ctermbg=109 guibg=#13354A
