@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/ehza/Abstraction/gisty'
 let g:netrw_dirhist_5='/Users/ehza/Abstraction/haskell-dev-env/.devcontainer'
 let g:netrw_dirhist_4='/Users/ehza/philosophize/ehz_django/ehz_django_project/mysite/mysite'
 let g:netrw_dirhist_3='/Users/ehza/philosophize/ehz_django/ehz_django_project/mysite'
