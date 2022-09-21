@@ -24,9 +24,6 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
 }
@@ -61,9 +58,6 @@ export PATH="$PATH:/usr/local/Cellar/sqlite:/usr/local/bin:/usr/bin:/bin:/usr/sb
 #
 export PYTHON_CONFIGURE_OPTS="--enable-optimizations --with-lto --enable-profiling --enable-framework --with-dtrace --with-system-expat --with-system-ffi --with-system-libmpdec"
 
-allpipepip() {
-pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U
-}
 
 alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
 export LD_PATH="$LD_PATH:/usr/local/lib"
