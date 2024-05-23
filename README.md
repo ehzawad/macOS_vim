@@ -143,3 +143,21 @@ activate() {
     print_python_path
 }
 ```
+### Seperation of concerns
+```bash
+# Set default python3.12 and pip3.12 to the desired location
+export PATH="/home/ehz/.python312/bin:$PATH"
+
+# Check if pip3.12 is installed, and set the alias accordingly
+if [[ -f "/home/ehz/.python312/bin/pip3.12" ]]; then
+    alias pip3.12="/home/ehz/.python312/bin/pip3.12"
+else
+    alias pip3.12='echo "Please install pip3.12 in /home/ehz/.python312/bin/"'
+fi
+
+# Print the Python path when activating a virtual environment
+activate() {
+    source "$@"
+    print_python_path
+}
+```
